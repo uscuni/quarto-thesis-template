@@ -1,0 +1,188 @@
+$passoptions.latex()$
+\documentclass[
+$for(babel-otherlangs)$
+  $babel-otherlangs$,
+$endfor$
+$if(babel-lang)$
+  $babel-lang$,
+$endif$
+$if(fontsize)$
+  $fontsize$,
+$endif$
+$if(papersize)$
+  $papersize$paper,
+$endif$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$
+]{$documentclass$}
+$if(beamerarticle)$
+\usepackage{beamerarticle} % needs to be loaded first
+$endif$
+\usepackage{xcolor}
+$if(geometry)$
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
+\usepackage{amsmath,amssymb}
+$if(cancel)$
+\usepackage{cancel}
+$endif$
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{-\maxdimen}
+$endif$
+$fonts.latex()$
+$font-settings.latex()$
+$common.latex()$
+$after-header-includes.latex()$
+$hypersetup.latex()$
+$if(pdf-trailer-id)$
+
+\ifXeTeX
+\special{pdf:trailerid [ $pdf-trailer-id$ ]}
+\fi
+\ifPDFTeX
+\pdftrailerid{}
+\pdftrailer{/ID [ $pdf-trailer-id$ ]}
+\fi
+\ifLuaTeX
+\pdfvariable trailerid {[ $pdf-trailer-id$ ]}
+\fi
+$endif$
+
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+\begin{document}
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+
+\setstretch{1.5}
+
+\begin{titlepage}
+\centering
+\textbf{$thesis.university$}\\
+\textbf{$thesis.faculty$}\\[10mm]
+
+Studijní program: $thesis.study_program$ \break
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[height=$if(thesis.logo_height)$$thesis.logo_height$$else$8cm$endif$]{$thesis.logo$}
+\end{center}
+\end{figure}
+
+\textbf{$for(author)$$author$$sep$, $endfor$}\\[1cm]
+
+$title$\\[5mm]
+$thesis.title_en$\\[1cm]
+
+$thesis.thesis_type$\\[1cm]
+
+Školitel: \textbf{$thesis.supervisor$}\\
+\null\vfill
+
+$thesis.place$, $if(thesis.year)$$thesis.year$$else$\the\year$endif$
+\end{titlepage}
+
+\pagestyle{empty}
+\null\vfill
+\noindent $thesis.declaration$
+\\[2cm]
+$thesis.place$, \mydate\today \hfill $thesis.signature$
+\newpage
+
+\null\vfill
+\noindent $thesis.acknowledgement$
+\newpage
+
+\section*{Abstrakt}
+$thesis.abstract_cs$
+
+\section*{Klíčová slova}
+$thesis.keywords_cs$
+\\
+
+\section*{Abstract}
+$thesis.abstract_en$
+
+\section*{Keywords}
+$thesis.keywords_en$
+
+\newpage
+
+\section*{Seznam zkratek}
+$for(thesis.abbreviations)$
+$thesis.abbreviations.term$ - $thesis.abbreviations.description$$sep$\\
+$endfor$
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\pagestyle{plain}
+\setstretch{1.5}
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+$if(toc-title)$
+\renewcommand*\contentsname{$toc-title$}
+$endif$
+{
+$if(colorlinks)$
+$if(toccolor)$
+\hypersetup{linkcolor=$toccolor$}
+$endif$
+$endif$
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+$if(lof)$
+\listoffigures
+$endif$
+$if(lot)$
+\listoftables
+$endif$
+$if(linestretch)$
+\setstretch{$linestretch$}
+$endif$
+$if(has-frontmatter)$
+\mainmatter
+$endif$
+$body$
+
+$if(has-frontmatter)$
+\backmatter
+$endif$
+$if(nocite-ids)$
+\nocite{$for(nocite-ids)$$it$$sep$, $endfor$}
+$endif$
+$if(natbib)$
+$if(bibliography)$
+$if(biblio-title)$
+$if(has-chapters)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+
+$endif$
+$endif$
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
+$endif$
+$for(include-after)$
+$include-after$
+
+$endfor$
+\end{document}

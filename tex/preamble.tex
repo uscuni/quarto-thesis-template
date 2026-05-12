@@ -1,0 +1,35 @@
+% Text and PDF management
+\usepackage{parskip}
+\usepackage{setspace}
+\usepackage[a-2u]{pdfx}
+\hypersetup{hidelinks}
+\emergencystretch=1em
+
+% Tables and figures
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[table]{skip=10pt}
+\captionsetup{justification=centering}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tablefootnote}
+
+% Chemistry and mathematics
+\usepackage[version=4]{mhchem}
+\usepackage{amsmath}
+
+% Other utilities kept from the original template
+\usepackage{lipsum}
+\usepackage{datetime}
+\newdateformat{mydate}{\THEDAY. \THEMONTH. \THEYEAR}
+\renewcommand{\refname}{Reference}
+\let\thesisbibliography\bibliography
+\renewcommand{\bibliography}[1]{%
+  \setstretch{1}%
+  \addcontentsline{toc}{section}{Reference}%
+  \thesisbibliography{#1}%
+}
+
+% Original document spacing
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{15pt}

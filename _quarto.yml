@@ -1,0 +1,61 @@
+project:
+  type: default
+  render:
+    - thesis.qmd
+
+title: "Název práce (v ČJ)"
+author: "Titul. Jméno Příjmení"
+bibliography: reference.bib
+
+thesis:
+  university: "Univerzita Karlova"
+  faculty: "Přírodovědecká fakulta"
+  study_program: "Studijní program"
+  logo: "figures/logo.jpg"
+  logo_height: "8cm"
+  title_en: "Název práce (v AJ)"
+  thesis_type: "Bakalářská práce - Diplomová práce - Rigorózní práce - Disertační práce - Závěrečná práce v programu celoživotního vzdělávání"
+  supervisor: "Školitel"
+  place: "Praha"
+  signature: "Autor"
+  declaration: "Prohlášení"
+  acknowledgement: "Poděkování"
+  abstract_cs: "Abstrakt"
+  keywords_cs: "Klíčová slova"
+  abstract_en: "Abstract"
+  keywords_en: "Keywords"
+  abbreviations:
+    - term: "DFT"
+      description: "Density functional theory"
+
+format:
+  pdf:
+    documentclass: article
+    fontsize: 12pt
+    papersize: a4
+    pdf-engine: pdflatex
+    keep-tex: false
+    lang: cs
+    cite-method: natbib
+    biblio-style: achemso
+    citecolor: black
+    linkcolor: black
+    urlcolor: black
+    toc: false
+    number-sections: true
+    template: tex/template.tex
+    include-in-header: tex/preamble.tex
+    include-after-body: tex/after-body.tex
+    fig-align: center
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    geometry:
+      - left=2.5cm
+      - right=2.5cm
+      - top=2.5cm
+      - bottom=2.5cm
+
+execute:
+  echo: false
+  warning: false
+  message: false
