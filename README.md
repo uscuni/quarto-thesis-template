@@ -30,3 +30,5 @@ The generated PDF is `thesis.pdf`.
 Only the LaTeX fragments under `tex/` are part of the source project. Quarto may
 generate `thesis.tex` during rendering because `keep-tex: true` is enabled; it is an
 output file and can be deleted.
+
+Converted from a[ LaTeX template](https://www.overleaf.com/latex/templates/univerzita-karlova-v-praze-prirodovedecke-fakulta-sablona-pro-zaverecne-prace/fwjqdvrwpfmn) by Daniel Willimetz, licensed under Creative Commons CC BY 4.0.
