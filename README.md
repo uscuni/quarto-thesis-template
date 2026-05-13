@@ -18,17 +18,19 @@ The generated PDF is `thesis.pdf`.
   keywords, and abbreviations.
 - `thesis.qmd` is the Markdown thesis body. Use headings for sections,
   `[@citation-key]` for citations, and Quarto cross-reference labels such as
-  `{#fig-name}`, `{#tbl-name}`, and `{#eq-name}`.
+  `{#fig-name}`, `{#tbl-name}`, and `{#eq-name}`. It prints the bibliography before
+  including the appendices.
+- `appendices.qmd` contains the Markdown appendix content included after the
+  bibliography.
 - `tex/template.tex` is the Quarto/Pandoc LaTeX template that turns the metadata in
   `_quarto.yml` into the title page and front matter.
 - `tex/preamble.tex` contains the LaTeX packages and layout settings copied from the
   original template.
-- `tex/after-body.tex` contains the optional appendix block from the original template.
 - `reference.bib` remains the BibTeX bibliography file.
 - `figures/` remains the image directory.
 
-Only the LaTeX fragments under `tex/` are part of the source project. Quarto may
-generate `thesis.tex` during rendering because `keep-tex: true` is enabled; it is an
-output file and can be deleted.
+Only the LaTeX fragments under `tex/` are part of the source project. Quarto uses
+`thesis.tex` as an intermediate file during rendering, but `keep-tex: false` means
+it is not kept as a source file.
 
 Converted from a[ LaTeX template](https://www.overleaf.com/latex/templates/univerzita-karlova-v-praze-prirodovedecke-fakulta-sablona-pro-zaverecne-prace/fwjqdvrwpfmn) by Daniel Willimetz, licensed under Creative Commons CC BY 4.0.

@@ -1,0 +1,12 @@
+\clearpage
+
+# Přílohy {.unnumbered}
+
+## Příloha 1: Příklad textu {#text .unnumbered}
+
+\lipsum[1]
+
+## Příloha 2: Jednoduchý dotazník {#questionnaire .unnumbered}
+
+- Jak se jmenujete?
+- Odkud pocházíte?

@@ -4,7 +4,9 @@
 
 Ukázková stránka:
 
-\lipsum[2]
+Occaecat qui labore occaecat aliquip id reprehenderit dolor pariatur esse enim cupidatat officia qui voluptate. Veniam sint et id voluptate magna dolore. Elit labore Lorem minim consequat ex ex do voluptate magna elit nisi ipsum elit. Reprehenderit exercitation aute irure amet incididunt laborum culpa eiusmod fugiat nisi cupidatat qui dolore labore. Qui exercitation duis consequat enim reprehenderit ipsum dolore in magna.
+
+Nostrud nulla magna occaecat irure sunt laborum laborum anim excepteur eu. Sit fugiat minim tempor adipisicing sint cillum minim sint officia. Eu sunt sint amet consectetur eu aute irure eu ut deserunt amet officia eu. Cupidatat irure ea sit proident nostrud consequat laboris eiusmod sit deserunt. Nisi ea nostrud culpa esse enim adipisicing enim tempor excepteur deserunt Lorem incididunt ut. Pariatur enim aliquip tempor mollit mollit et do id. Exercitation in cillum ex sit exercitation esse mollit magna aute pariatur ea duis cillum minim.
 
 Citace vypadají takto [@Willimetz2025] a odkazy na objekty jako například @fig-priklad, @tbl-priklad nebo @eq-priklad. Pro přidání odkazů přidejte BibTeX záznamy do souboru `reference.bib`.
 
@@ -51,3 +53,10 @@ Diskuze je tady.
 # Závěr
 
 Závěr je tady.
+
+# Reference {.unnumbered}
+
+::: {#refs}
+:::
+
+{{< include appendices.qmd >}}

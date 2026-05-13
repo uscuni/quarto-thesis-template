@@ -45,7 +45,6 @@ format:
     number-sections: true
     template: tex/template.tex
     include-in-header: tex/preamble.tex
-    include-after-body: tex/after-body.tex
     fig-align: center
     fig-cap-location: bottom
     tbl-cap-location: top

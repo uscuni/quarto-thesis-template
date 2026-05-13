@@ -22,13 +22,6 @@
 \usepackage{lipsum}
 \usepackage{datetime}
 \newdateformat{mydate}{\THEDAY. \THEMONTH. \THEYEAR}
-\renewcommand{\refname}{Reference}
-\let\thesisbibliography\bibliography
-\renewcommand{\bibliography}[1]{%
-  \setstretch{1}%
-  \addcontentsline{toc}{section}{Reference}%
-  \thesisbibliography{#1}%
-}
 
 % Original document spacing
 \setlength{\parskip}{10pt}
