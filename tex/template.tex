@@ -20,6 +20,7 @@ $if(beamerarticle)$
 \usepackage{beamerarticle} % needs to be loaded first
 $endif$
 \usepackage{xcolor}
+\usepackage{etoolbox}
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
@@ -54,6 +55,18 @@ $endif$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 \date{$date$}
 
+\newcommand{\thesislang}{$if(lang)$$lang$$else$cs$endif$}
+\newif\ifthesisenglish
+\ifdefstring{\thesislang}{en}{\thesisenglishtrue}{\thesisenglishfalse}
+\newcommand{\thesislabel}[2]{\ifthesisenglish#2\else#1\fi}
+\newcommand{\thesisstudyprogramlabel}{\thesislabel{Studijní program}{Study programme}}
+\newcommand{\thesissupervisorlabel}{\thesislabel{Školitel}{Supervisor}}
+\newcommand{\thesisabstractlabel}{\thesislabel{Abstrakt}{Abstract}}
+\newcommand{\thesiskeywordslabel}{\thesislabel{Klíčová slova}{Keywords}}
+\newcommand{\thesisotherabstractlabel}{\thesislabel{Abstract}{Abstrakt}}
+\newcommand{\thesisotherkeywordslabel}{\thesislabel{Keywords}{Klíčová slova}}
+\newcommand{\thesisabbreviationslabel}{\thesislabel{Seznam zkratek}{List of abbreviations}}
+
 \begin{document}
 $if(has-frontmatter)$
 \frontmatter
@@ -66,7 +79,7 @@ $endif$
 \textbf{$thesis.university$}\\
 \textbf{$thesis.faculty$}\\[10mm]
 
-Studijní program: $thesis.study_program$ \break
+\thesisstudyprogramlabel: $thesis.study_program$ \break
 
 \begin{figure}[h!]
 \begin{center}
@@ -81,7 +94,7 @@ $thesis.title_en$\\[1cm]
 
 $thesis.thesis_type$\\[1cm]
 
-Školitel: \textbf{$thesis.supervisor$}\\
+\thesissupervisorlabel: \textbf{$thesis.supervisor$}\\
 \null\vfill
 
 $thesis.place$, $if(thesis.year)$$thesis.year$$else$\the\year$endif$
@@ -98,22 +111,38 @@ $thesis.place$, \mydate\today \hfill $thesis.signature$
 \noindent $thesis.acknowledgement$
 \newpage
 
-\section*{Abstrakt}
+\section*{\thesisabstractlabel}
+\ifthesisenglish
+$thesis.abstract_en$
+\else
 $thesis.abstract_cs$
+\fi
 
-\section*{Klíčová slova}
+\section*{\thesiskeywordslabel}
+\ifthesisenglish
+$thesis.keywords_en$
+\else
 $thesis.keywords_cs$
+\fi
 \\
 
-\section*{Abstract}
+\section*{\thesisotherabstractlabel}
+\ifthesisenglish
+$thesis.abstract_cs$
+\else
 $thesis.abstract_en$
+\fi
 
-\section*{Keywords}
+\section*{\thesisotherkeywordslabel}
+\ifthesisenglish
+$thesis.keywords_cs$
+\else
 $thesis.keywords_en$
+\fi
 
 \newpage
 
-\section*{Seznam zkratek}
+\section*{\thesisabbreviationslabel}
 $for(thesis.abbreviations)$
 $thesis.abbreviations.term$ - $thesis.abbreviations.description$$sep$\\
 $endfor$

@@ -12,7 +12,8 @@ The generated PDF is `thesis.pdf`.
 
 - `_quarto.yml` configures Quarto's PDF output to match the original LaTeX template:
   `article`, 12 pt, A4 paper, Czech language support, `natbib`, `achemso`, PDF/A,
-  margins, figure/table caption placement, and the custom LaTeX includes.
+  margins, figure/table caption placement, localized front matter labels via
+  `lang`, and the custom LaTeX includes.
 - `_quarto.yml` also contains the thesis metadata used by the title page and front
   matter: titles, author, university, faculty, study programme, supervisor, abstracts,
   keywords, and abbreviations.
