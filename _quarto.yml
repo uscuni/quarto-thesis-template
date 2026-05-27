@@ -53,6 +53,7 @@ format:
       - right=2.5cm
       - top=2.5cm
       - bottom=2.5cm
+  docx: default
 
 execute:
   echo: false
