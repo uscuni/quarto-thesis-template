@@ -19,6 +19,7 @@ thesis:
   place: "Praha"
   signature: "Autor"
   declaration: "Prohlášení"
+  ai_declaration: "Prohlášení o využití umělé inteligence"
   acknowledgement: "Poděkování"
   abstract_cs: "Abstrakt"
   keywords_cs: "Klíčová slova"

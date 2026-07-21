@@ -107,6 +107,12 @@ $thesis.place$, $if(thesis.year)$$thesis.year$$else$\the\year$endif$
 $thesis.place$, \mydate\today \hfill $thesis.signature$
 \newpage
 
+$if(thesis.ai_declaration)$
+\null\vfill
+\noindent $thesis.ai_declaration$
+\newpage
+$endif$
+
 \null\vfill
 \noindent $thesis.acknowledgement$
 \newpage
