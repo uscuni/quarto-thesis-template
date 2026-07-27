@@ -42,6 +42,8 @@ format:
     linkcolor: black
     urlcolor: black
     toc: false
+    lof: true
+    lot: true
     number-sections: true
     template: tex/template.tex
     include-in-header: tex/preamble.tex

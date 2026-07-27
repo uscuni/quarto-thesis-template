@@ -142,14 +142,14 @@ $thesis.keywords_en$
 
 \newpage
 
+\tableofcontents
+\newpage
+
 \section*{\thesisabbreviationslabel}
 $for(thesis.abbreviations)$
 $thesis.abbreviations.term$ - $thesis.abbreviations.description$$sep$\\
 $endfor$
 
-\newpage
-
-\tableofcontents
 \newpage
 
 \pagestyle{plain}
@@ -175,9 +175,11 @@ $endif$
 $endif$
 $if(lof)$
 \listoffigures
+\newpage
 $endif$
 $if(lot)$
 \listoftables
+\newpage
 $endif$
 $if(linestretch)$
 \setstretch{$linestretch$}
