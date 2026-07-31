@@ -37,7 +37,7 @@ format:
     keep-tex: false
     lang: cs
     cite-method: natbib
-    biblio-style: achemso
+    biblio-style: apalike
     citecolor: black
     linkcolor: black
     urlcolor: black
