@@ -27,6 +27,7 @@ thesis:
   abbreviations:
     - term: "DFT"
       description: "Density functional theory"
+  include-assignment: false
 
 format:
   pdf:

@@ -100,6 +100,10 @@ $thesis.thesis_type$\\[1cm]
 $thesis.place$, $if(thesis.year)$$thesis.year$$else$\the\year$endif$
 \end{titlepage}
 
+$if(thesis.include-assignment)$
+\input{tex/assignment.tex}
+$endif$
+
 \pagestyle{empty}
 \null\vfill
 \noindent $thesis.declaration$
