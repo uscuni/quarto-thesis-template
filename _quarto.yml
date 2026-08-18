@@ -10,6 +10,8 @@ bibliography: reference.bib
 thesis:
   university: "Univerzita Karlova"
   faculty: "Přírodovědecká fakulta"
+  department: "Jméno katedry"
+  guarantor: "Jméno garanta oboru"
   study_program: "Studijní program"
   logo: "figures/logo.jpg"
   logo_height: "8cm"
@@ -28,6 +30,14 @@ thesis:
     - term: "DFT"
       description: "Density functional theory"
   include-assignment: false
+  assignment:
+    description: Náplň závěrečné práce.
+    page_range: "50–70 stran"
+    date_assigned: "Stanoveno v SIS."
+    literature:
+      - "Klíčová reference 1."
+      - "Klíčová reference 2."
+      - "Klíčová reference 3."
 
 format:
   pdf:
