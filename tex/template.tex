@@ -100,6 +100,70 @@ $thesis.thesis_type$\\[1cm]
 $thesis.place$, $if(thesis.year)$$thesis.year$$else$\the\year$endif$
 \end{titlepage}
 
+$if(thesis.include-assignment)$
+{
+\pagestyle{empty}
+\setstretch{1.15}
+
+\begin{center}
+\textbf{UNIVERZITA KARLOVA}\\
+\textbf{$thesis.faculty_cs$}$if(thesis.department)$\\
+$thesis.department$$endif$\\[10mm]
+{\large\textbf{ZADÁNÍ DIPLOMOVÉ PRÁCE}}
+\end{center}
+
+\vspace{4mm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{4mm}
+
+\noindent\textbf{Jméno a příjmení:} $for(author)$$author$$sep$, $endfor$\\[2mm]
+\noindent\textbf{Studijní obor:} $thesis.study_program$\\[2mm]
+\noindent Garant studijního programu/oboru vám schválil přidělení této diplomové práce.\\[6mm]
+
+\noindent\textbf{Název práce:}\\[2mm]
+\noindent\fbox{%
+\begin{minipage}[t][2.2cm][t]{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+$title$
+\end{minipage}}\\[6mm]
+
+\noindent\textbf{Předběžná náplň práce}\\[2mm]
+\noindent\fbox{%
+\begin{minipage}[t][7cm][t]{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+$thesis.assignment.description$
+\end{minipage}}\\[6mm]
+\noindent\textbf{Rozsah průvodní zprávy:} $thesis.assignment.page_range$\\[2mm]
+\noindent\textbf{Rozsah grafických prací:} v rámci textu.
+\newpage
+\noindent\textbf{Seznam odborné literatury:}\\[2mm]
+$if(thesis.assignment.literature)$
+\begin{itemize}\setlength{\itemsep}{4mm}
+$for(thesis.assignment.literature)$
+  \item $thesis.assignment.literature$
+$endfor$
+\end{itemize}
+$endif$
+\vspace{8mm}
+
+\noindent\textbf{Vedoucí diplomové práce:} $thesis.supervisor$\\[3mm]
+\noindent\textbf{Datum zadání diplomové práce:} $thesis.assignment.date_assigned$\\[3mm]
+\noindent\textbf{Termín odevzdání diplomové práce:} dle harmonogramu příslušného akademického roku.\\[16mm]
+\noindent V Praze dne \mydate\today\\[26mm]
+
+\noindent\begin{minipage}{0.48\textwidth}\centering
+\rule{5.5cm}{0.4pt}\\[1mm]
+$thesis.guarantor$\\
+Garant studijního programu
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}\centering
+\rule{5.5cm}{0.4pt}\\[1mm]
+$thesis.supervisor$\\
+Vedoucí práce
+\end{minipage}
+
+\newpage
+}
+$endif$
+
 \pagestyle{empty}
 \null\vfill
 \noindent $thesis.declaration$
